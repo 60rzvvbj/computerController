@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="lock">锁屏</div>
+      <div class="shutdown">关机</div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      let lockBox = document.querySelector(".lock");
+      let shutdownBox = document.querySelector(".shutdown");
+      lockBox.addEventListener("click", async () => {
+        let res = await axios.post("/send?msg=lock");
+        console.log(res);
+      });
+      shutdownBox.addEventListener("click", async () => {
+        let res = await axios.post("/send?msg=shutdown");
+        console.log(res);
+      });
+    </script>
+  </body>
+</html>

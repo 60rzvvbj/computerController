@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
+    "lib": ["dom", "es5", "es2015.promise", "es2015", "es2017"]
+  },
+  "include": ["src/index.ts", "src/server.ts", "src/client.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
